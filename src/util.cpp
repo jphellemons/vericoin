@@ -5,7 +5,6 @@
 
 #include "util.h"
 #include "sync.h"
-#include "strlcpy.h"
 #include "version.h"
 #include "ui_interface.h"
 
