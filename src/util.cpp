@@ -1029,7 +1029,7 @@ void PrintException(std::exception* pex, const char* pszThread)
 
 void LogStackTrace() {
     printf("\n\n******* exception encountered *******\n");
-    if (fileout)
+    /*if (fileout)
     {
 #ifndef WIN32
         void* pszBuffer[32];
@@ -1037,7 +1037,7 @@ void LogStackTrace() {
         size = backtrace(pszBuffer, 32);
         backtrace_symbols_fd(pszBuffer, size, fileno(fileout));
 #endif
-    }
+    }*/
 }
 
 void PrintExceptionContinue(std::exception* pex, const char* pszThread)
