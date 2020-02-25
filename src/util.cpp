@@ -66,11 +66,6 @@ static boost::filesystem::detail::utf8_codecvt_facet utf8;
 # include <sys/prctl.h>
 #endif
 
-#ifndef WIN32
-#include <execinfo.h>
-#endif
-
-
 using namespace std;
 
 map<string, string> mapArgs;
