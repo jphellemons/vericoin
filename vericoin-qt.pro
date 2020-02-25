@@ -68,6 +68,7 @@ QRENCODE_LIB_PATH=$$DEPS_PATH/qrencode-4.0.2/.libs
 unix: contains(TARGET_BIT, m32) {
 BOOST_INCLUDE_PATH = /usr/local/include
 BOOST_LIB_PATH = /usr/local/lib
+BOOST_LIB_SUFFIX =-mt
 }
 
 # mac build dependencies
@@ -272,7 +273,6 @@ HEADERS += src/qt/bitcoingui.h \
     src/kernel.h \
     src/scrypt.h \
     src/serialize.h \
-    src/strlcpy.h \
     src/main.h \
     src/miner.h \
     src/net.h \
