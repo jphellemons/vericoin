@@ -5,7 +5,6 @@
 
 #include "irc.h"
 #include "net.h"
-#include "strlcpy.h"
 #include "base58.h"
 
 using namespace std;
