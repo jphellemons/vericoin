@@ -181,7 +181,7 @@ obj/sha2-x64.o: sha2-x64.S
 obj/sha2-arm.o: sha2-arm.S
 	$(CXX) -c $(CFLAGS) -MMD -o $@ $<
 
-ifeq (${ARCH}, aarch644)
+ifeq (${ARCH}, aarch64)
 
 obj/sha2-armv8.o: sha2-armv8.c
 	$(CC) -c $(CFLAGS) -march=armv8.1-a+crypto -MMD -o $@ $<
