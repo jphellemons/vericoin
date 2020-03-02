@@ -448,7 +448,7 @@ bool CTxDB::LoadBlockIndex()
     {
         if (fRequestShutdown || pindex->nHeight < nBestHeight-nCheckDepth)
         {
-            printf("let's stop here")
+            printf("let's stop here");
             break;
         }
         CBlock block;
