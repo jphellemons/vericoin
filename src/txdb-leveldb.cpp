@@ -447,10 +447,16 @@ bool CTxDB::LoadBlockIndex()
     for (CBlockIndex* pindex = pindexBest; pindex && pindex->pprev; pindex = pindex->pprev)
     {
         if (fRequestShutdown || pindex->nHeight < nBestHeight-nCheckDepth)
+        {
+            printf("let's stop here")
             break;
+        }
         CBlock block;
         if (!block.ReadFromDisk(pindex))
+        {
+            printf("read from disk failed while loading")
             return error("LoadBlockIndex() : block.ReadFromDisk failed");
+        }
         // check level 1: verify block validity
         // check level 7: verify block signature too
         if (nCheckLevel>0 && !block.CheckBlock(true, true, (nCheckLevel>6)))
@@ -555,10 +561,13 @@ bool CTxDB::LoadBlockIndex()
         printf("LoadBlockIndex() : *** moving best chain pointer back to block %d\n", pindexFork->nHeight);
         CBlock block;
         if (!block.ReadFromDisk(pindexFork))
+        {
+            printf("read from disk failed")
             return error("LoadBlockIndex() : block.ReadFromDisk failed");
+        }
         CTxDB txdb;
         block.SetBestChain(txdb, pindexFork);
     }
-
+    printf("Done with the verifying, but might be fake news.")
     return true;
 }
