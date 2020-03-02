@@ -454,7 +454,7 @@ bool CTxDB::LoadBlockIndex()
         CBlock block;
         if (!block.ReadFromDisk(pindex))
         {
-            printf("read from disk failed while loading")
+            printf("read from disk failed while loading");
             return error("LoadBlockIndex() : block.ReadFromDisk failed");
         }
         // check level 1: verify block validity
@@ -562,12 +562,12 @@ bool CTxDB::LoadBlockIndex()
         CBlock block;
         if (!block.ReadFromDisk(pindexFork))
         {
-            printf("read from disk failed")
+            printf("read from disk failed");
             return error("LoadBlockIndex() : block.ReadFromDisk failed");
         }
         CTxDB txdb;
         block.SetBestChain(txdb, pindexFork);
     }
-    printf("Done with the verifying, but might be fake news.")
+    printf("Done with the verifying, but might be fake news.");
     return true;
 }
